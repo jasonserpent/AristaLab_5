@@ -1,0 +1,5 @@
+[connection:leaf1]
+[DEFAULT]
+transport: https
+username: arista
+password: arista7ceu 
