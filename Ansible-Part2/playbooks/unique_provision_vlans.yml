@@ -1,11 +1,11 @@
 ---
-- hosts: leaf1, leaf2
+- hosts: leaf3
   gather_facts: no
   tasks:
   - name: Create template
     template:
       src: "{{lookup('env','PWD')}}/templates/vlans.j2"
-      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_vlans.cfg"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_vlansX.cfg"
   - name: Upload config
     eos_config:
-      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_vlans.cfg"
+      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_vlansX.cfg"

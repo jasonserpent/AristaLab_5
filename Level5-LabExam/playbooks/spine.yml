@@ -1,7 +1,7 @@
 # This playbook is to be used to generate spine MP-BGP config with variables from underlay.yml
 
 ---
-- hosts: spines_DC2
+- hosts: spine1, spine2
   gather_facts: no
   tasks:
   - name: Register variables (candidates- Do not change this)
@@ -13,3 +13,6 @@
       src: "{{lookup('env','PWD')}}/templates/spine.j2"
       dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_spine.cfg"
   # Use the eos_config module to create a task to upload the configuration you created to the switch
+  - name: Upload config
+    eos_config:
+      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_spine.cfg"
