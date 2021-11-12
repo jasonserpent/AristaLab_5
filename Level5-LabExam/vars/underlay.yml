@@ -154,7 +154,7 @@ leaf3:
       - 10.1.2.15
       - 10.1.2.17
     spine-ASN: 65100
-  MLAG: Even
+  MLAG: Odd
 leaf4:
   interfaces:
     loopback0: 
@@ -179,7 +179,7 @@ leaf4:
       - 10.1.2.21
       - 10.1.2.23
     spine-ASN: 65100
-  MLAG: Odd
+  MLAG: Even
 borderleaf1:
   interfaces:
     loopback0: 

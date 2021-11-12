@@ -6,18 +6,18 @@ service routing protocols model multi-agent
 {# This section is static, no need to modify#}
 
 ip prefix-list LOOPBACK
-    seq 10 permit 10.1.0.0/24 eq 32
-    seq 20 permit 10.1.1.0/24 eq 32
-    seq 30 permit 10.2.0.0/24 eq 32
-    seq 40 permit 10.2.1.0/24 eq 32
+ seq 10 permit 10.1.0.0/24 eq 32
+ seq 20 permit 10.1.1.0/24 eq 32
+ seq 30 permit 10.2.0.0/24 eq 32
+ seq 40 permit 10.2.1.0/24 eq 32
 
 route-map LOOPBACK permit 10
-   match ip address prefix-list LOOPBACK
+ match ip address prefix-list LOOPBACK
 
 {# Pull the ASN and router-id from the underlay.yml file #}
 
 router bgp {{ underlay[inventory_hostname]['BGP']['ASN'] }}
-router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4']}}
+ router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4']}}
    no bgp default ipv4-unicast
    maximum-paths 3
    distance bgp 20 200 200
@@ -35,7 +35,7 @@ router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4']}}
 {# This is the connection to the leaf peer #}
 
    neighbor LEAF_Peer peer group
-   neighbor LEAF_Peer remote-as {# The ASN of the other leaf in the MLAG pair #}}
+   neighbor LEAF_Peer remote-as {{ underlay[inventory_hostname]['BGP']['ASN'] }}
    neighbor LEAF_Peer next-hop-self
    neighbor LEAF_Peer maximum-routes 12000
 {# This must be a loop, preferably a "for" loop, to put the neighbor relationships in #}
