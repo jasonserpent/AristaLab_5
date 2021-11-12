@@ -1,7 +1,10 @@
-- hosts: leaf1
+- hosts: leaf1, leaf2
   gather_facts: no
   tasks:
   - name: Create template
     template:
       src: "{{lookup('env','PWD')}}/templates/vlans.j2"
       dest: "{{lookup('env','PWD')}}/configs/vlans.cfg"
+  - name: Drop config to switch
+    eos_config:
+      src: "{{lookup('env','PWD')}}/configs/vlans.cfg"

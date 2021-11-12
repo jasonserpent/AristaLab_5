@@ -1,6 +1,6 @@
-- hosts: leaf1
+- hosts: all
   gather_facts: no
   tasks: 
   - name: Create VLANs from file
     eos_config:
-src: vlans.cfg
+      src: /home/coder/project/labfiles/Ansible-Part2/configs/vlans.cfg
