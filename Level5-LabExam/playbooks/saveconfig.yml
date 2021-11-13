@@ -1,0 +1,14 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Save local config
+    eos_command:
+      commands:
+        - copy run start
+    register: version
+  - name: Display results
+    debug:
+      var: version

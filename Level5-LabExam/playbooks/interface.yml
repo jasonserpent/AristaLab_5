@@ -2,7 +2,7 @@
 
 ---
 # For hosts: refer to the inventory file for an appropriate entry that would encompass DC2's leafs and spines
-- hosts: leaf1, leaf2, leaf3, leaf4
+- hosts: leaf1
   gather_facts: no
   tasks:
   - name: Register variables (candidates- Do not change this)
@@ -17,4 +17,5 @@
   - name: Upload config
     eos_config:
       src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_interfaceEX2.cfg"
+      replace: config
       

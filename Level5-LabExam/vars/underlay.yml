@@ -25,9 +25,7 @@ spine1:
     Ethernet6: 
       ipv4: 10.1.2.25
       mask: 31
-    Ethernet7: 
-      ipv4: 10.1.2.31
-      mask: 31
+
   BGP:
     ASN: 65100
 spine2:
@@ -49,9 +47,6 @@ spine2:
       mask: 31
     Ethernet6: 
       ipv4: 10.1.2.27
-      mask: 31
-    Ethernet7: 
-      ipv4: 10.1.2.33
       mask: 31
   BGP:
     ASN: 65100
@@ -75,9 +70,6 @@ spine3:
     Ethernet6: 
       ipv4: 10.1.2.29
       mask: 31
-    Ethernet7: 
-      ipv4: 10.1.2.35
-      mask: 31
   BGP:
     ASN: 65100
 leaf1:
@@ -88,14 +80,11 @@ leaf1:
     loopback1: 
       ipv4: 10.1.1.11
       mask: 32
-    Ethernet3:
+    Ethernet2:
       ipv4: 10.1.2.0
       mask: 31
-    Ethernet4: 
+    Ethernet3: 
       ipv4: 10.1.2.2
-      mask: 31
-    Ethernet5: 
-      ipv4: 10.1.2.4
       mask: 31
   BGP: 
     ASN: 65101
@@ -113,15 +102,13 @@ leaf2:
     loopback1: 
       ipv4: 10.1.1.11
       mask: 32
-    Ethernet3:
+    Ethernet2:
       ipv4: 10.1.2.6
       mask: 31
-    Ethernet4: 
+    Ethernet3: 
       ipv4: 10.1.2.8
       mask: 31
-    Ethernet5: 
-      ipv4: 10.1.2.10
-      mask: 31
+
   BGP: 
     ASN: 65101
     spine-peers:
@@ -138,14 +125,11 @@ leaf3:
     loopback1: 
       ipv4: 10.1.1.13
       mask: 32
-    Ethernet3: 
+    Ethernet2: 
       ipv4: 10.1.2.12
       mask: 31
-    Ethernet4:
+    Ethernet3:
       ipv4: 10.1.2.14
-      mask: 31
-    Ethernet5: 
-      ipv4: 10.1.2.16
       mask: 31
   BGP:
     ASN: 65102
@@ -163,14 +147,11 @@ leaf4:
     loopback1: 
       ipv4: 10.1.1.13
       mask: 32
-    Ethernet3: 
+    Ethernet2: 
       ipv4: 10.1.2.18
       mask: 31
-    Ethernet4: 
+    Ethernet3: 
       ipv4: 10.1.2.20
-      mask: 31
-    Ethernet5: 
-      ipv4: 10.1.2.22
       mask: 31
   BGP:
     ASN: 65102
